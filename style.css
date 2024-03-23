@@ -1,12 +1,72 @@
+* {
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: monospace;
+  letter-spacing: -1px;
+  transition: 0.5s;
+}
 #player {
   width: 50px;
   height: 50px;
   background-color: blue;
   position: absolute;
+  box-shadow: 0px 0px 10px green;
 }
 #resource {
   width: 20px;
   height: 20px;
   background-color: green;
   position: absolute;
+}
+.header {
+  background: teal;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50px;
+  justify-content: space-evenly;
+}
+.upgrade_list {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  list-style-type: none;
+}
+.upgrade_list > .error {
+  color: #ff9d4c;
+  font-weight: bold;
+  opacity: 0;
+  padding: 5px 10px;
+}
+.upgrade_list > li > button {
+  padding: 5px 10px;
+  background-color: #6639cd;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  color: white;
+  border-radius: 20px;
+  transition: 0.15s;
+}
+.upgrade_list > li > button:hover {
+  box-shadow: 0px 0px 10px #6639cd;
+  transform: scale(1.1);
+}
+.upgrade_list > li > button:active {
+  box-shadow: 0px 0px 10px #9f76ff;
+  transform: scale(0.9);
+}
+.visible {
+  opacity: 1!important;
+  animation: smooth_appear 0.5 linear 0s 1 forwards;
+}
+@keyframes smooth_appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
